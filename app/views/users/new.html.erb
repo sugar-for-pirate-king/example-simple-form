@@ -1,0 +1,14 @@
+<% flash.each do |key, val| %>
+  <div class="alert alert-<%=key%>">
+    <%= val %>
+  </div>
+<% end %>
+
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :username, label: 'Insert your username', error: 'Username is mandotory' %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :phone_number, hint: 'Please insert just number', as: :integer %>
+  <%= f.input :address, as: :text %>
+  <%= f.button :submit, class: 'btn btn-primary'%>
+<% end %>
